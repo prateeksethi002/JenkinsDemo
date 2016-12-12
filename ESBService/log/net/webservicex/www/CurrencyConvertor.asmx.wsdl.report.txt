@@ -1,0 +1,25 @@
+
+
+Importing file: C:\Users\IBM_ADMIN\Desktop\CurrencyConvertor.asmx.wsdl
+
+The WSDL import will proceed with bindings CurrencyConvertorSoap, CurrencyConvertorSoap12.
+Creating wsdl schema document for file:///C:/Users/IBM_ADMIN/Desktop/CurrencyConvertor.asmx.wsdl.
+Parsing wsdl binding {http://www.webserviceX.NET/}CurrencyConvertorSoap.
+Parsing wsdl binding input ConversionRate.
+Parsing wsdl binding output ConversionRate.
+Parsing wsdl binding {http://www.webserviceX.NET/}CurrencyConvertorSoap12.
+Parsing wsdl binding input ConversionRate.
+Parsing wsdl binding output ConversionRate.
+Processing doc style for operation ConversionRate.
+Populating WSDL schema CurrencyConvertor.asmx.xsd.
+Creating file CurrencyConvertor.asmx.xsd in the workspace.
+Creating file CurrencyConvertor.asmx_InlineSchema1.xsd in the workspace.
+Copying source WSDL CurrencyConvertor.asmx.wsdl to CurrencyConvertor.asmx.wsdl.
+
+Elapsed time processing this message definition file: 0.49 seconds
+Number of warnings for this message definition file: 0
+
+
+Number of files processed: 1
+
+

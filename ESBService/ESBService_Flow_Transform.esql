@@ -1,11 +1,20 @@
+DECLARE ns3 NAMESPACE 'http://schemas.xmlsoap.org/soap/envelope/';
+DECLARE ns NAMESPACE 'http://www.webserviceX.NET/';
 
 
 CREATE COMPUTE MODULE ESBService_Flow_Transform
 	CREATE FUNCTION Main() RETURNS BOOLEAN
 	BEGIN
-		
-		SET OutputRoot.Properties = InputRoot.Properties;
-		SET OutputRoot.XMLNSC = InputRoot.XMLNSC;
+		set OutputRoot.Properties = InputRoot.Properties;
+		if(InputRoot.SOAP.Body.ns:ConversionRate.ns:FromCurrency = 'INR') then
+			SET OutputRoot.SOAP.Body.ns:ConversionRateResponse.ns:ConversionRateResult = '100.0';
+		elseif(InputRoot.SOAP.Body.ns:ConversionRate.ns:FromCurrency = 'GBP') then
+			SET OutputRoot.SOAP.Body.ns:ConversionRateResponse.ns:ConversionRateResult = '1.0';
+	else
+			SET OutputRoot.SOAP.Body.(XMLNSC.NamespaceDecl)xmlns:NS1 = 'http://schemas.xmlsoap.org/soap/envelope/';
+			SET OutputRoot.SOAP.Body.ns3:Fault.faultcode = 'NS1:client';
+			SET OutputRoot.SOAP.Body.ns3:Fault.faultstring = 'Wrong Input';
+		end if;
 		RETURN TRUE;
 	END;
 
