@@ -3,8 +3,8 @@
 CREATE COMPUTE MODULE ESBService_Flow_Transform
 	CREATE FUNCTION Main() RETURNS BOOLEAN
 	BEGIN
-		-- CALL CopyMessageHeaders();
-		CALL CopyEntireMessage();
+	
+		SET OutputRoot = InputRoot;
 		RETURN TRUE;
 	END;
 
