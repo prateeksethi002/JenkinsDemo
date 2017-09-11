@@ -10,11 +10,11 @@
   </target>
 	<target name="setprofile">
 		<echo message="Executing mqsiprofile" />
-		<exec executable="${toolkit.home}\server\bin\mqsiprofile.cmd" />
+		<exec executable="${toolkit.home}\server\bin\mqsiprofile.cmd"  vmlauncher="false" spawn="false"/>
 	</target>
   <target name="deploy">
      <echo message="Deploying the Message Broker Project @ ${workspace.dir}" />
-     <exec executable="${toolkit.home}\server\bin\mqsideploy.exe" >
+     <exec executable="${toolkit.home}\server\bin\mqsideploy.exe" spawn="false" >
        <!-- Integration Node name -->
 	   <arg value="TESTNODE_nikita" />
 	   <!-- Bar file name -->
