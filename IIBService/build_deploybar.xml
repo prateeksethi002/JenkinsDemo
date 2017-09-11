@@ -8,7 +8,8 @@
     <antcall target="deploy" />
   </target>
   <target name="deploy">
-     <echo message="Building the Message Broker Project @ ${workspace.dir}" />
+     <echo message="Deploying the Message Broker Project @ ${workspace.dir}" />
+  	 <exec executable="${toolkit.home}\server\bin\mqsiprofile" spawn="false"/>
      <exec executable="${toolkit.home}\server\bin\mqsideploy.exe" spawn="false">
        <!-- Integration Node name -->
 	   <arg value="TESTNODE_nikita" />
