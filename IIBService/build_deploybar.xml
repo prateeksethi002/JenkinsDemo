@@ -8,21 +8,19 @@
   	<antcall target="setprofile" />
   	<antcall target="deploy" />
   </target>
-	<target name="setprofile">
-		<echo message="Executing mqsiprofile" />
-		<exec executable="${toolkit.home}\server\bin\mqsiprofile.cmd"  vmlauncher="false" spawn="false"/>
-	</target>
   <target name="deploy">
      <echo message="Deploying the Message Broker Project @ ${workspace.dir}" />
-     <exec executable="${toolkit.home}\server\bin\mqsideploy.exe" spawn="false" >
+     <exec executable="${toolkit.home}\server\bin\mqsideploy.bat" spawn="false" >
        <!-- Integration Node name -->
-	   <arg value="TESTNODE_nikita" />
+     	<arg value="-b" />
+     	<arg value="TESTNODE_nikita" />
+     	<!-- Integration Server -->
+     	        <arg value="-e" />
+     	            <arg value="default" />
 	   <!-- Bar file name -->
-        <arg value="-b" />
+        <arg value="-a" />
             <arg value="${bar.name}" />
-        <!-- Integration Server -->
-        <arg value="-e" />
-            <arg value="default" />
+        
  
         <!-- Timeout -->
         <arg value="-w" />
