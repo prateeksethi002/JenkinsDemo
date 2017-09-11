@@ -17,10 +17,11 @@
         <!-- List all the message flow projects -->
         <arg value="-p" />
             <arg value="IIBService" />
+     	<arg value="IIBServiceJava" />
  
         <!-- List all the files to be included in the archive -->
         <arg value="-o" />
-            <arg value="IIBService\WebServiceFlow.msgflow" />
+            <arg value="IIBService\com\ibm\esb\WebServiceFlow.msgflow" />
      </exec>
   </target>
 </project>
