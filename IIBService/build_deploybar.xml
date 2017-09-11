@@ -9,7 +9,9 @@
   </target>
   <target name="deploy">
      <echo message="Deploying the Message Broker Project @ ${workspace.dir}" />
+  	<echo message="Executing mqsiprofile" />
   	 <exec executable="${toolkit.home}\server\bin\mqsiprofile.cmd" />
+  	<echo message="Executing mqsideploy" />
      <exec executable="${toolkit.home}\server\bin\mqsideploy.exe" >
        <!-- Integration Node name -->
 	   <arg value="TESTNODE_nikita" />
