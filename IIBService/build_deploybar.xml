@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<project name="project" default="run">
+  <target name="run" description="">
+    <property name="toolkit.home" value="C:\Program Files\IBM\IIB\10.0.0.6" />
+    <property name="ant.bars.basedir" value="C:\OutputDIR" />
+    <property name="bar.name" value="${ant.bars.basedir}\WebServiceFlow.bar" />
+    <property name="workspace.dir" value="C:\Users\nikita\Desktop\Jenkins\workspace\IIBService" />
+    <antcall target="deploy" />
+  </target>
+  <target name="deploy">
+     <echo message="Building the Message Broker Project @ ${workspace.dir}" />
+     <exec executable="${toolkit.home}\server\bin\mqsideploy.exe" spawn="false">
+       <!-- Integration Node name -->
+	   <arg value="TESTNODE_nikita" />
+	   <!-- Bar file name -->
+        <arg value="-b" />
+            <arg value="${bar.name}" />
+        <!-- Integration Server -->
+        <arg value="-e" />
+            <arg value="default" />
+ 
+        <!-- Timeout -->
+        <arg value="-w" />
+            <arg value="180" />
+     </exec>
+  </target>
+</project>
