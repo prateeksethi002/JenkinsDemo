@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <project name="project" default="run">
   <target name="run" description="">
-    <property name="toolkit.home" value="C:\Users\nikita\Desktop\Jenkins" />
+    <property name="toolkit.home" value="C:\Program Files\IBM\IIB\10.0.0.6" />
     <property name="ant.bars.basedir" value="C:\OutputDIR" />
     <property name="bar.name" value="${ant.bars.basedir}\WebServiceFlow.bar" />
     <property name="workspace.dir" value="C:\Users\nikita\Desktop\Jenkins\workspace\IIBService" />
@@ -9,7 +9,7 @@
   </target>
   <target name="build">
      <echo message="Building the Message Broker Project @ ${workspace.dir}" />
-     <exec executable="${toolkit.home}\mqsicreatebar.exe" spawn="false">
+     <exec executable="${toolkit.home}\tools\mqsicreatebar.exe" spawn="false">
         <arg value="-data" />
             <arg value="${workspace.dir}" />
         <arg value="-b" />
