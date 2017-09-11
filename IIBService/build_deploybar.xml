@@ -5,7 +5,7 @@
     <property name="ant.bars.basedir" value="C:\OutputDIR" />
     <property name="bar.name" value="${ant.bars.basedir}\WebServiceFlow.bar" />
     <property name="workspace.dir" value="C:\Users\nikita\Desktop\Jenkins\workspace\IIBService" />
-  	<antcall target="setprofile" />
+  	
   	<antcall target="deploy" />
   </target>
   <target name="deploy">
