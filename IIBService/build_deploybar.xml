@@ -5,13 +5,15 @@
     <property name="ant.bars.basedir" value="C:\OutputDIR" />
     <property name="bar.name" value="${ant.bars.basedir}\WebServiceFlow.bar" />
     <property name="workspace.dir" value="C:\Users\nikita\Desktop\Jenkins\workspace\IIBService" />
-    <antcall target="deploy" />
+  	<antcall target="setprofile" />
+  	<antcall target="deploy" />
   </target>
+	<target name="setprofile">
+		<echo message="Executing mqsiprofile" />
+		<exec executable="${toolkit.home}\server\bin\mqsiprofile.cmd" />
+	</target>
   <target name="deploy">
      <echo message="Deploying the Message Broker Project @ ${workspace.dir}" />
-  	<echo message="Executing mqsiprofile" />
-  	 <exec executable="${toolkit.home}\server\bin\mqsiprofile.cmd" />
-  	<echo message="Executing mqsideploy" />
      <exec executable="${toolkit.home}\server\bin\mqsideploy.exe" >
        <!-- Integration Node name -->
 	   <arg value="TESTNODE_nikita" />
