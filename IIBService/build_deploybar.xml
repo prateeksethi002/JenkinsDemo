@@ -11,6 +11,7 @@
   <target name="deploy">
      <echo message="Deploying the Message Broker Project @ ${workspace.dir}" />
      <exec dir="${toolkit.home}\server\bin" executable="cmd" spawn="false" >
+     	<echo message="Executing mqsiprofile and mqsideploy"/>
      	<arg value="mqsiprofile &amp; mqsideploy" />
      	<!-- Integration Node name -->
      	
