@@ -10,7 +10,8 @@
   </target>
   <target name="deploy">
      <echo message="Deploying the Message Broker Project @ ${workspace.dir}" />
-     <exec executable="${toolkit.home}\server\bin\mqsideployscript.bat" spawn="false" >
+     <exec executable="cmd" spawn="false" >
+     	<arg value="${toolkit.home}\server\bin\mqsideployscript.bat"/>
        <!-- Integration Node name -->
      	<arg value="-b" />
      	<arg value="TESTNODE_nikita" />
