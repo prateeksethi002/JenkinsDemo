@@ -12,7 +12,9 @@
      <echo message="Deploying the Message Broker Project @ ${workspace.dir}" />
      <exec dir="${toolkit.home}\server\bin" executable="cmd" spawn="false" >
      	
-     	<arg value="mqsiprofile &amp; mqsideploy.exe" />
+     	<arg file="mqsiprofile"/>
+     		<arg value="&amp;"/>
+     			<arg value="mqsideploy" />
      	<!-- Integration Node name -->
      	
      	<arg value="TESTNODE_nikita" />
