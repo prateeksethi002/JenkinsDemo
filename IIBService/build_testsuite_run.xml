@@ -1,9 +1,9 @@
 <project name="IntegrationTest" default="soapui-tests-setup" basedir=".">
 	<target name="soapui-tests-setup" description="">
     <property name="soapUI.home" value="C:\Program Files\SmartBear\SoapUI-4.6.2" />
-    <property name="testreport.dir" value="C:\OutputDIR" />
+    <property name="testreport.dir" value="C:\Users\nikita\Desktop\Jenkins\workspace\IIBService" />
 	<property name="workspace.dir" value="C:\Users\nikita\Desktop\Jenkins\workspace\IIBService" />
-    <property name="soapui.project.file.name" value="${workspace.dir}\IIBService-soapui-project.xml" />
+    <property name="soapui.project.file.name" value="${workspace.dir}\IIBService\IIBService-soapui-project.xml" />
     <antcall target="testsuite-run" />
   </target>
     <target name="checkos">
