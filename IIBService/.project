@@ -3,7 +3,6 @@
 	<name>IIBService</name>
 	<comment></comment>
 	<projects>
-		<project>IIBServiceJava</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

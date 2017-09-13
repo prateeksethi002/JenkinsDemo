@@ -14,14 +14,10 @@
             <arg value="${workspace.dir}" />
         <arg value="-b" />
             <arg value="${bar.name}" />
+     	<arg value="-cleanBuild"/>
         <!-- List all the message flow projects -->
-        <arg value="-p" />
+        <arg value="-a" />
             <arg value="IIBService" />
-     	<arg value="IIBServiceJava" />
- 
-        <!-- List all the files to be included in the archive -->
-        <arg value="-o" />
-            <arg value="IIBService\com\ibm\esb\WebServiceFlow.msgflow" />
      </exec>
   </target>
 </project>
