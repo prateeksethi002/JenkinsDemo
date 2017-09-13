@@ -21,8 +21,8 @@
               failifexecutionfails="yes"
         >    
             <arg value="-s getStringTestSuite"/>
-            <arg value="-r -j"/>
-            <arg value="-f"/>
+            <arg value="-rjf"/>
+           
             <arg path="${testreport.dir}"/>
             <arg path="${soapui.project.file.name}"/>
         </exec>
