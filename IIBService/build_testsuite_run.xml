@@ -20,7 +20,7 @@
               failonerror="yes"
               failifexecutionfails="yes"
         >    
-            <arg value="-s getStringTestSuite"/>
+            <arg value="-sgetStringTestSuite"/>
             <arg value="-rjf"/>
            
             <arg path="${testreport.dir}"/>
