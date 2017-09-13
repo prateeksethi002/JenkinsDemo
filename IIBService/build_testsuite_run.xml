@@ -1,0 +1,30 @@
+<project name="IntegrationTest" default="soapui-tests-setup" basedir=".">
+	<target name="soapui-tests-setup" description="">
+    <property name="soapUI.home" value="C:\Program Files\SmartBear\SoapUI-4.6.2" />
+    <property name="testreport.dir" value="C:\OutputDIR" />
+	<property name="workspace.dir" value="C:\Users\nikita\Desktop\Jenkins\workspace\IIBService" />
+    <property name="soapui.project.file.name" value="${workspace.dir}\IIBService-soapui-project.xml" />
+    <antcall target="testsuite-run" />
+  </target>
+    <!--<target name="checkos">
+        <condition property="testrunner.cmd" value="${soapUI.home}/bin/testrunner.bat">
+                <os family="windows" />
+        </condition>
+        <condition property="testrunner.cmd" value="${soapUI.home}/bin/testrunner.sh">
+                <os family="unix" />
+        </condition>
+    </target>-->
+
+    <target name="testsuite-run" depends="checkos">
+        <exec executable="${testrunner.cmd}"
+              failonerror="yes"
+              failifexecutionfails="yes"
+        >    
+            <arg value="-s getStringTestSuite"/>
+            <arg value="-r -j"/>
+            <arg value="-f"/>
+            <arg path="${testreport.dir}"/>
+            <arg path="${soapui.project.file.name}"/>
+        </exec>
+    </target>
+</project>
