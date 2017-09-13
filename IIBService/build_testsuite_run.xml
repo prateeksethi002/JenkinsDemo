@@ -6,14 +6,14 @@
     <property name="soapui.project.file.name" value="${workspace.dir}\IIBService-soapui-project.xml" />
     <antcall target="testsuite-run" />
   </target>
-    <!--<target name="checkos">
+    <target name="checkos">
         <condition property="testrunner.cmd" value="${soapUI.home}/bin/testrunner.bat">
                 <os family="windows" />
         </condition>
         <condition property="testrunner.cmd" value="${soapUI.home}/bin/testrunner.sh">
                 <os family="unix" />
         </condition>
-    </target>-->
+    </target>
 
     <target name="testsuite-run" depends="checkos">
         <exec executable="${testrunner.cmd}"
